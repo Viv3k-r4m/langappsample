@@ -1,7 +1,10 @@
 package com.example.languageleraningapp
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -29,18 +32,38 @@ class LessonActivity : AppCompatActivity() {
         val txtRomaji = findViewById<TextView>(R.id.txtRomaji)
         val txtSound = findViewById<TextView>(R.id.txtSound)
         val btnNext = findViewById<Button>(R.id.btnNext)
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        val lessonContainer = findViewById<LinearLayout>(R.id.lessonContainer)
+        val lessonCompletedContainer = findViewById<LinearLayout>(R.id.lessonCompletedContainer)
+        val btnRestart = findViewById<Button>(R.id.btnRestart)
+
+        progressBar.max = chapter.letters.size
 
         fun show() {
-            val letter = chapter.letters[index]
-            txtJP.text = letter.jp
-            txtRomaji.text = "Romaji: " + letter.romaji
-            txtSound.text = "Sound: " + letter.sound
+            if (index < chapter.letters.size) {
+                val letter = chapter.letters[index]
+                txtJP.text = letter.jp
+                txtRomaji.text = "Romaji: " + letter.romaji
+                txtSound.text = "Sound: " + letter.sound
+                progressBar.progress = index + 1
+                lessonContainer.visibility = View.VISIBLE
+                lessonCompletedContainer.visibility = View.GONE
+            } else {
+                lessonContainer.visibility = View.GONE
+                lessonCompletedContainer.visibility = View.VISIBLE
+                progressBar.progress = chapter.letters.size
+            }
         }
 
         show()
 
         btnNext.setOnClickListener {
-            index = (index + 1) % chapter.letters.size
+            index++
+            show()
+        }
+
+        btnRestart.setOnClickListener {
+            index = 0
             show()
         }
     }

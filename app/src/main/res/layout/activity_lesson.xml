@@ -2,48 +2,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
-    <TextView
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
         android:id="@+id/titlefor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:textAlignment="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="32dp"
+        android:textColor="#333333"/>
+
     <LinearLayout
-        android:layout_width="300dp"
+        android:id="@+id/lessonContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/card">
-    <TextView
-        android:id="@+id/txtJP"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textSize="60sp"
-        android:textStyle="bold"/>
+        android:background="@drawable/card"
+        android:padding="24dp">
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/txtRomaji"
-        android:textSize="22sp"/>
+        <TextView
+            android:id="@+id/txtJP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
 
-    <TextView
-        android:id="@+id/txtSound"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textSize="22sp"/>
+        <TextView
+            android:id="@+id/txtRomaji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/darker_gray"/>
 
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_marginTop="16dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="Next"/>
+        <TextView
+            android:id="@+id/txtSound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/darker_gray"/>
 
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_marginTop="32dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lessonCompletedContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lesson Completed!"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restart"/>
     </LinearLayout>
 
 </LinearLayout>

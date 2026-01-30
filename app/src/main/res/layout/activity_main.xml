@@ -1,47 +1,61 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="10dp">
+    android:padding="24dp"
+    android:background="#F5F5F5">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Category"
+        android:text="Learn Japanese"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:layout_marginLeft="10dp" />
+        android:textSize="32sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="32dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAlphabet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Alphabets"
-        android:background="@drawable/category"
-        android:layout_margin="8dp"/>
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp"
+        app:icon="@android:drawable/ic_menu_sort_alphabetically"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnVocab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Vocabulary"
-        android:background="@drawable/category"
-        android:layout_margin="8dp"/>
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp"
+        app:icon="@android:drawable/ic_menu_search"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPhrases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Phrases"
-        android:background="@drawable/category"
-        android:layout_margin="8dp"/>
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp"
+        app:icon="@android:drawable/ic_menu_send"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGrammar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Grammar"
-        android:background="@drawable/category"
-        android:layout_margin="8dp"/>
+        android:padding="16dp"
+        app:cornerRadius="12dp"
+        app:icon="@android:drawable/ic_menu_manage"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
 
 </LinearLayout>
